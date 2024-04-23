@@ -1,0 +1,953 @@
+/* Vi resetter vores css kode*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* Vi resetter vores HTML5 display-role for ældre browsere */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+    max-width: 100vw;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Vi gør sådan så der ikke vises en scrollbar i siden */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* VORES KODE STARTER NU*/
+
+/* generel style for body */
+body { 
+   background-repeat: no-repeat;
+   font-family: "Smooch Sans", sans-serif;
+   color: #fff;
+   background-size: cover;
+}
+
+/* GENEREL STYLING TIL ALLE UNDERSIDER PÅNÆR FORSIDEN*/
+
+/* rotation for planterne */
+@keyframes rotatePlanet {
+    from {
+        transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#roter_planet {
+    animation: rotatePlanet 22s linear infinite;
+}
+
+/* baggrundsbillede for sider der har samme baggrund */
+#start_og_slut_body {
+    background-image: url('../img/jupiter_baggrund.jpg');
+    background-size: cover;
+}
+
+/* overskrifter og tekster for planterne samt quizzen*/
+.planeter_overskrift, .planeter_tekst, .container_planeter_svar {
+    position: absolute; 
+    color: #fff;
+    font-family: "Smooch Sans", sans-serif;
+    width: 40%; 
+    left: 8%; 
+    text-align: center; 
+}
+
+.planeter_overskrift{
+    top: 20%; 
+    font-size: 5em; 
+    font-weight: 500;
+}
+
+.planeter_tekst{
+    top: 35%; 
+    font-size: 2em; 
+}
+
+.container_planeter_svar{
+    position: absolute;
+    top: 50%;
+    left: 14%; 
+}
+
+.container_planeter_svar a{
+    text-decoration: none; 
+}
+
+#planeter_rigtig_svar {
+    display: block;
+    width: 15em;
+    height: 2.5em; 
+    margin-bottom: 0.8em; 
+    background-color: transparent;
+    color: #ffffff; 
+    font-size: 1.7em;
+    font-weight: 550;
+    border-radius: 30px;
+    border: 2px solid white;
+    font-family: "Smooch Sans", sans-serif;
+}
+
+#planeter_rigtig_svar:hover {
+    transform: scale(1.1); 
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.planeter_svar{
+    display: block;
+    width: 15em;
+    height: 2.5em; 
+    margin-bottom: 0.8em; 
+    background-color: transparent;
+    color: #ffffff; 
+    font-size: 1.7em;
+    font-weight: 550;
+    border-radius: 30px;
+    border: 2px solid white;
+    font-family: "Smooch Sans", sans-serif;
+}
+
+.planeter_svar:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+/*fade ind for planeter*/
+#planet_fade {
+    transition: all 1.5s;
+    opacity:0;
+}
+
+/* pilen der går tilbage*/
+#pil_planet{
+    width: 7%;
+    position: absolute;
+    top: 5%;
+}
+
+#pil_planet:hover {
+transform: scale(1.1); 
+}
+
+/* pil videre container*/
+.pil_ned {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    overflow: hidden;
+}
+
+.pil_ned a {
+    display: flex;
+    justify-content: center;
+}
+
+.pil_ned:hover {
+    cursor: pointer;
+}
+
+/* pil videre*/
+.pil_planet_videre {
+    width: 50%;
+}
+
+.pil_planet_videre:hover {
+    transform: scale(1.1);
+}
+
+
+/* opdeling af undersidernes overordnede sektion */
+.planet_sektion{
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+}
+    
+.planet_sektion_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+    
+.planet_quiz_sektion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 45%;
+    padding: 50px;
+}
+
+/* wrapper der ligger udenom planerne*/
+.planet_wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    
+/*sitebar */
+#site_bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3%;
+    padding: 10px;
+    position: relative;
+    float: right;
+    margin-top: 8%;
+}
+
+/* dots i sitebaren*/
+.stor_dot{
+    border: 2px solid white;
+    width: 1px;
+    height: 1px;
+    padding: 10px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.lille_dot {
+    border: 2px solid white;
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    background-color: white;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+#udfyldt_dot {
+    background-color: white;
+}
+
+/*placering af raketter i sitebar*/
+.raket_style {
+    width: 150%;
+    position: absolute;
+}
+
+#raket_merkur {
+    left: -60px;
+    top: 50px;
+}
+
+#raket_venus {
+    left: -60px;
+    top: 115px;
+}
+
+#raket_jorden {
+    left: -60px;
+    top: 185px;
+}
+
+#raket_mars {
+    left: -60px;
+    bottom: 260px;
+}
+
+#raket_jupiter {
+    left: -60px;
+    bottom: 190px;
+}
+
+#raket_saturn {
+    left: -60px;
+    bottom: 122px;
+}
+
+#raket_uranus {
+    left: -60px;
+    bottom: 55px;
+}
+
+#raket_neptun {
+    left: -60px;
+    bottom: -7px;
+}
+
+/* FORKERT SVAR POP-UP TIL PLANET UNDERSIDERNE*/
+
+#forkertsvar_planeter {
+    position: relative;
+    width: 140%;
+    z-index: 3;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #261025;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: none;
+    margin-left: -19%;
+    margin-top: 15%;
+}
+
+#forkertsvar_planeter img {
+    width: 20%;
+    margin-bottom: 2%;
+}
+
+
+#forkertsvar_planeter h1{
+    font-size: 3.5em;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+/* prøv igen knap */ 
+#provigen_knap_to {
+    color: #fff;
+    background-color: #261025;
+    border-radius: 30px;
+    border: 2px solid white;
+    width: 200px;
+    height: 65px;
+    font-family: "Smooch Sans", sans-serif;
+    margin: 0 auto; 
+    font-size: 2em;
+    margin-top: 1%;
+    box-shadow: 0px 3px 3px 3px #353535;
+}
+
+#provigen_knap_to:hover {
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+
+/* INDEX.HTML / FORSIDE*/
+
+/* tekster*/
+#overskrift_forside {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    font-weight:600;
+    font-size: 6em;
+}
+
+#underoverskrift_forside {
+    display: flex;
+    justify-content: center;
+    font-weight:300;
+    font-size: 4em;
+}
+
+/* karakter*/
+#karakter_forside {
+  position: fixed;
+  margin-top: -9%;
+  margin-left: 23%;
+}
+
+#karakter_forside img {
+    width: 70%;
+}
+
+/* start quiz button*/
+#start_button{
+    color: #fff;
+    background-color: #261025;
+    border-radius: 30px;
+    border: 2px solid white;
+    width: 280px;
+    height: 65px;
+    font-family: "Smooch Sans", sans-serif;
+    display: block; 
+    margin: 0 auto; 
+    font-size: 2.5em;
+    margin-top: 1%;
+    box-shadow: 0px 3px 3px 3px #353535;
+    text-decoration: none;
+}
+
+#start_button:hover {
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+#link_knap{
+    text-decoration: none;
+}
+
+
+/* UNDERSIDE FARTØJ.HTML */
+
+/* tekster*/
+#overskrift_fartoj {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    font-weight:600;
+    font-size: 5em;
+}
+
+/* container udenom buttons*/
+.fartoj_container {
+  display: flex;
+  text-align: center;
+  position: fixed;
+  justify-content: center;
+ 
+}
+
+/* buttons for hvert fartøj */
+.fartoj_knap {
+    background-color: #261025;
+    border-radius: 500px;
+    border: 2px solid white;
+    width: 10%;
+    padding: 2%;
+    margin: 2%;
+}
+
+.fartoj_knap:hover {
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+/* billede af raket på knap*/
+#fartoj_raket {
+    padding-top: 5%;
+}
+
+/* billede af ufo på knap*/
+#fartoj_ufo {
+    padding-top: 10%;
+}
+
+/* billede af sattelit på knap*/
+.fartoj_knap img{
+    width: 100%;
+}
+
+
+/* ERROR SIDEN SOM SKAL POPPE OP HVIS MAN VÆLGER ANDET FARTØJ END RAKET*/
+
+#error {
+    position: fixed;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #261025;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: none;
+    margin-top: -13%;
+    margin-left: 18%;
+}
+
+/*overskriften på h1*/
+#error h1{
+    font-size: 3.5em;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+/*karakteren der ser overrasket ud*/
+#error img {
+    width: 20%;
+    margin-bottom: 2%;
+}
+
+/* selve knappen der leder tilbage til at kunne vælge et andet fartøj*/
+#error_knap {
+    color: #fff;
+    background-color: #261025;
+    border-radius: 30px;
+    border: 2px solid white;
+    width: 200px;
+    height: 65px;
+    font-family: "Smooch Sans", sans-serif;
+    display: block; 
+    margin: 0 auto; 
+    font-size: 2em;
+    margin-top: 1%;
+    box-shadow: 0px 3px 3px 3px #353535;
+}
+
+#error_knap:hover {
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+/* UNDERSIDE START.HTML */
+
+/* sort baggrundsfarve*/
+.nulstil_body {
+    background-color: black;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+}
+/*sitebar*/
+#site_bar_sol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 3%;
+    padding: 10px;
+    position: relative;
+    float: right;
+}
+
+/*placering af raketten i sitebaren*/
+#raket_sol  {
+    left: -60px;
+    top: -15px;
+}
+
+/* undersidens overordnede sektion */
+#sol_quiz_sektion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 45%;
+    padding: 50px;
+}
+
+#sol_sektion {
+    position: relative;
+    background-image: url('../img/sol_baggrund.jpeg');
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    transition: all 3s;
+    opacity:0;
+}
+
+#sol_sektion_items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*overskrift for solen samt tekster tilhørende quizzen om solen */
+.quiz_overskrift, .quiz_tekst {
+    color: #fff;
+    font-family: "Smooch Sans", sans-serif;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.quiz_overskrift{
+    font-size: 5em; 
+    font-weight: 500;
+}
+
+.quiz_tekst{
+    font-size: 2em; 
+}
+
+/* container for svarmuligheder*/
+.container_svar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+    padding-top: 20px;
+}
+
+/* links i container for svarmuligheder*/
+.container_svar a{
+    text-decoration: none; 
+}
+
+/* det rigtige svar*/
+#rigtig_svar {
+    display: block;
+    width: 15em;
+    height: 2.5em; 
+    margin-bottom: 0.8em; 
+    background-color: transparent;
+    color: #ffffff; 
+    font-size: 1.7em;
+    font-weight: 550;
+    border-radius: 30px;
+    border: 2px solid white;
+    font-family: "Smooch Sans", sans-serif;
+    text-decoration: none;
+}
+
+#rigtig_svar:hover {
+    transform: scale(1.1); 
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* de forkerte svar*/
+.svar{
+    display: block;
+    width: 15em;
+    height: 2.5em; 
+    margin-bottom: 0.8em; 
+    background-color: transparent;
+    color: #ffffff; 
+    font-size: 1.7em;
+    font-weight: 550;
+    border-radius: 30px;
+    border: 2px solid white;
+    font-family: "Smooch Sans", sans-serif;
+}
+
+.svar:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.5); 
+}
+
+/*container for pop-up ved forkert svar*/
+#forkertsvar {
+    position: relative;
+    width: 70%;
+    z-index: 10;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #261025;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    display: none;
+    margin-left: 14%;
+    margin-top: -42%;
+}
+
+/*overskriften for forkert svar*/
+#forkertsvar h1{
+    font-size: 3.5em;
+    font-weight: 500;
+    margin-bottom: 2%;
+}
+
+/*karakteren for forkert svar*/
+#forkertsvar img {
+    width: 20%;
+    margin-bottom: 2%;
+}
+
+/*prøv igen knappen*/
+#provigen_knap {
+    color: #fff;
+    background-color: #261025;
+    border-radius: 30px;
+    border: 2px solid white;
+    width: 200px;
+    height: 65px;
+    font-family: "Smooch Sans", sans-serif;
+    margin: 0 auto; 
+    font-size: 2em;
+    margin-top: 1%;
+    box-shadow: 0px 3px 3px 3px #353535;
+}
+
+#provigen_knap:hover {
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+/* pilen der går tilbage*/
+#pil_sol {
+    width: 7%;
+    margin-top: 2%;
+}
+
+#pil_sol:hover {
+    transform: scale(1.1); 
+}
+
+/* sol*/
+#sol_baggrund {
+    width: 100%;
+    position: absolute; 
+}
+
+.sol {
+    width: 80%;
+    z-index: 1;  
+}
+
+/* wrapper der ligger udenom solen */
+#sol_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* UNDERSIDE MERKUR */
+
+/* baggrundsbillede*/
+#merkur_body{
+    background-image: url('../img/merker_baggrund.jpg');
+}
+
+/* merkur */
+.merkur {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 35%;
+    overflow: hidden;
+}
+
+/* UNDERSIDE VENUS */
+
+/* baggrundsbillede samt en højde der gør siden ikke bliver højere end skærmstørrelsen */
+#venus_body{
+    background-image: url('../img/venus_baggrund.jpg');
+    height: 100vh;
+}
+
+/* venus */
+.venus {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 35%;
+    overflow: hidden;
+}
+
+/* UNDERSIDE JORDEN */
+
+/* baggrundsbillede samt en højde der gør siden ikke bliver højere end skærmstørrelsen */
+#jorden_body{
+    background-image: url('../img/starry_sky.jpg');
+    height: 100vh;
+}
+
+/* jorden */
+.jorden {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 35%;
+    overflow: hidden;
+}
+
+/* UNDERSIDE MARS */
+
+/* baggrundsbillede*/
+
+#mars_body{
+    background-image: url('../img/mars_baggrund.jpg');
+}
+
+/* mars */
+.mars {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 33%;
+}
+
+/* UNDERSIDE JUPITER */
+
+/* baggrundsbillede*/
+#jupiter_body{
+    background-image: url('../img/jupiter_baggrund.jpg');
+}
+
+/* jupiter*/
+.jupiter {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 33%;
+}
+
+
+/* UNDERSIDE SATURN */
+
+/* baggrundsbillede*/
+#saturn_body{
+    background-image: url('../img/saturn_baggrund.jpg');
+}
+
+/* saturn*/
+.saturn_planet {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    width: 50%;
+    overflow: hidden;
+}
+
+/* UNDERSIDE URANUS*/
+
+/* baggrundsbillede*/
+#uranus_body{
+    background-image: url('../img/uranus_baggrund.jpg');
+}
+
+/* uranus*/
+.uranus {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 35%;
+}
+
+/* UNDERSIDE NEPTUN*/
+
+/* baggrundsbillede*/
+#neptun_body{
+    background-image: url('../img/neptun_baggrund.jpg');
+}
+
+/* neptun*/
+.neptun {
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    width: 31%;
+}
+
+
+/* FERDIG.HTML*/
+
+/* container til elementer*/
+  #universet_container{
+    display: block;
+    text-align: center;
+  }
+
+/* tekst*/
+  #universet_tekst {
+    font-size: 2em;
+    margin-top: 120px;
+    margin-bottom: 1%;
+  }
+  
+/* pil der fører til infographic*/
+  #pil_universet{
+    width: 15%;
+    overflow: hidden;
+  }
+
+  #pil_universet:hover{
+    transform: scale(1.1); 
+  }
+
+  
+/* INFO.HTML */
+
+/* baggundsbillede og en højde der ikke overgår skærmens størrelsen*/
+#info_body{
+    background-image: url('../img/starry_sky.jpg');
+    height: 100vh;
+}
+
+
+/* container til knappen der fører tilbage til start*/
+#knap_tilbage_div{
+    position: absolute;
+    bottom: 20px; 
+    right: 20px;
+}
+
+#tilbage_til_start{
+    text-decoration: none;
+}
+
+/* knappen der fører tilbage til start*/
+#tilbage_til_start_knap {
+    color: #fff;
+    background-color: #261025;
+    border-radius: 30px;
+    border: 2px solid white;
+    width: 150px;
+    height: 40px;
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 1.5em;
+    box-shadow: 0px 3px 3px 3px #353535;
+}
+
+#tilbage_til_start_knap:hover{
+    background-color: #3a2137; 
+    transform: scale(1.1); 
+}
+
+
+/* container til png med infographic tekst*/
+.info_billede_container {
+    display: flex;
+    justify-content: center;
+    margin-right: 3%;
+}
+
+/* png med infographic tekst*/
+#info_billede {
+    max-width: 85%;
+    margin-top: 4% ;
+    margin-left: 2%;
+}
+

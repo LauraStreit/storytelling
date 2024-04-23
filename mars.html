@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" >
+    <script src="forkertbox.js" defer></script>
+    <title>Mars</title>
+</head>
+
+<body id="mars_body">
+<main>
+
+<section id="planet_fade" class="planet_sektion">
+
+    <!-- pil der går tilbage -->
+
+    <div>
+        <a href="jorden.html">
+            <img src="img/pil.png" alt="planet_pil_tilbage" id="pil_planet">
+        </a>
+    </div>
+
+    <!-- mars der drejer rundt -->
+
+    <div class="planet_wrapper">
+        <img class="mars" id="roter_planet" src="img/mars.png" alt="mars">
+    </div>
+
+    <!-- sitebar -->
+
+    <div id="site_bar">
+        <img id="raket_mars" class="raket_style" src="img/raket_2_png.png" alt="raket i sitebar">
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div id="udfyldt_dot" class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+
+        <div class="stor_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="lille_dot"></div>
+        <div class="stor_dot"></div>
+    </div>
+
+    <!-- quiz spørgsmål -->
+
+<div class="planet_sektion_items">
+    <div class="planet_quiz_sektion">
+        <h1 class="planeter_overskrift">Mars</h1>
+         <p class="planeter_tekst">Hvilken vulkan på Mars anses for at være den største vulkan i solsystemet?</p>
+
+    <!-- quiz svarmuligheder -->
+
+        <div class="container_planeter_svar">
+            <button id="planeter_svar_to" class="planeter_svar">Mauna Loa</button>
+            <button id="planeter_svar_et" class="planeter_svar">Mount Everest</button>
+            <a href="jupiter.html">
+                <button id="planeter_rigtig_svar">Olympus Mons</button>
+            </a>
+        </div>
+
+    <!-- pop-up der vises hvis man svarer forkert -->
+
+        <div id="forkertsvar_planeter">
+            <h1>Øv du svarede forkert!</h1>
+            <img src="img/karakter_overrasket.png" alt="rum karakter overrasket">
+            <button id="provigen_knap_to">Prøv igen</button>
+        </div>
+    </div>
+</div>
+
+    <!-- pil der går videre -->
+
+        <div class="pil_ned">
+            <a href="jupiter.html">
+                <img src="img/pil_videre.png" alt="planet_pil_vindere" class="pil_planet_videre">
+            </a>
+        </div>
+    </section>
+
+    <!-- audio der kører i baggrunden -->
+
+    <audio id="rum_musik">
+        <source src="audio/hello-space-162636.mp3" type="audio/mpeg">
+    </audio>
+</main>
+</body>
+</html>
